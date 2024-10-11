@@ -21,8 +21,8 @@ export const useMovieStore = defineStore('movieStore', {
         this.currentPage = page; // Mettez à jour currentPage
       }
 
-      const apiKey = 'ec46c273';
-      const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(this.searchQuery)}&page=${page}`;
+
+      const url = `https://www.omdbapi.com/?apikey=${import.meta.env.VITE_API_KEY}&s=${encodeURIComponent(this.searchQuery)}&page=${page}`;
 
       this.isLoading = true; // Démarrer le chargement
 
